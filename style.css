@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+@font-face {
+    font-family: "Norse-Bold";
+    src: url("font/norse-bold/norse-bold.woff")format("woff"),
+        url("font/norse-bold/norse-bold.woff2")format("woff2")
+}
+:root {
+    --input-border-color: #E5E7EB;
+    --secondary-color: #596D48;
+    --secondary-color-hover: #768f61;
+    --secondary-color-active: #4b5c3d;
+    --error-color: #d12f2f;
+}
+
+* {
+    margin: 0; /* Compacts everything */
+    
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Roboto'; 
+    height: 100vh; /*defines height of our content, lets image stretch out to 100vh */
+    display: flex;  /* lets our two containers flex */
+    background-color: #fafafa;
+    
+} 
+
+.img-container {
+    background-image: url("images/background.png");
+    background-size:cover; /* resizes background image ot make sure element is fully covered */
+    background-position-x:center; /* sets initial horizontal position to center */
+    background-color:black; /*fallback to background image */
+    /*
+    flex:2; /* flex:1 means size of all elements will have the same width as their content, flex:2 means the size of other elements will have twice the same width as their content
+    */
+    min-width:450px; /* makes it so it doesnt go below 450px in the browser */
+    max-width:700px;
+    
+    position:relative; 
+    height:inherit; 
+    display:flex; 
+    justify-content:center;
+}
+/*
+.content-container{
+    flex:3;
+}
+
+
+img#img-bg{
+    
+    height:100%;
+    overflow:hidden;
+    object-fit:fill;
+    
+}
+*/
+.logo-container{
+    background-color: rgba(0,0,0,0.3);
+    position:absolute; 
+    top:25%;
+    width:100%;
+    height:max(15%,100px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+img#img-logo{
+    height:90%
+}
+.odin-text{
+    font-family:"Norse-Bold";
+    color:white;
+    font-size:max(13vh,90px);
+    display:flex;
+    align-items:center;
+    margin-left:10px;
+    margin-top:25px;
+
+}
+.photo-credit{
+    font-family:monospace;
+    font-size:0.8rem;
+    position:absolute;
+    bottom:5px;
+    color:white;
+}
+.photo-credit>a {
+    color:inherit;
+}
+.photo-credit>a:visited{
+    color:inherit;
+}
+.content-container{
+    /*
+    display:flex; */
+    flex-direction:column;
+}
+.description-container{
+    padding-left:50px; 
+}
+/*
+.content-container{
+    
+    padding-left:50px; 
+} 
+*/
+.description-container, .form-container>p{
+    font-size: 1.5rem;
+    font-weight:600;
+}
+.description-container{
+    width:min(90%,750px);
+    /*
+    margin-bottom:1.5rem; */
+}
+.description-container>p:first-child{
+    margin-bottom:1.5rem;
+}
+.description-container>p:last-child{
+    margin-bottom:3rem;
+}
+.form-container{
+    background-color:#FFFFFF;
+    padding-top:1rem;
+    padding-bottom:1.5rem;
+    box-shadow:0 3px 3px rgba(0,0,0,0.1);
+    padding-left:50px; 
+}
+form>div{
+    margin-top:1rem;
+    display:flex;
+}
+
+form>div:last-child{
+    margin-top:0;
+}
+label{
+    font-size:0.8rem;
+    font-weight:500;
+    letter-spacing:1px;
+    color:#353535;
+    display:block;
+    text-transform:uppercase;
+}
+input{
+    font-family:inherit;
+    font-size:100%;
+    width:min(20vw,250px);
+    height:2em;
+    padding:0 10px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 5px;
+}
+input:invalid{
+    border-color:var(--error-color);
+    border-width:1px;
+}
+
+input:placeholder-shown{
+    
+    border-color: var(--input-border-color);
+    /*
+    border-width:1px;
+    border-radius:5px;  */
+}
+/*
+input:focus{
+    outline:none;
+    border:1px solid var(--secondary-color);
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+}
+*/
+
+form>div>div:last-child{
+    margin-left:min(5vw,70px);
+}
+.password-val{
+    height:1rem;
+    color: var(--error-color);
+    font-size:0.8rem;
+}
+button{
+    margin:2.5rem 0;
+    border:none;
+    color:white;
+    background-color:var(--secondary-color);
+    font-size:1.2rem;
+    font-weight:600;
+    padding: 15px 40px;
+    border-radius: 5px;
+    margin-left:50px;
+}
+button:hover{
+    background-color: var(--secondary-color-hover);
+    
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.1); 
+    cursor:pointer;
+}
+button:active{
+    background-color: var(--secondary-color-active);
+}
+
+.content-container>p{
+    font-size:1.2rem;
+    padding-left:50px; 
+}
+
+.content-container>p>a{
+    color:var(--secondary-color);
+}
+.content-container>p>a:hover{
+    color:var(--secondary-color-hover);
+}
+.content-container>p>a:visited{
+    color:var(--secondary-color);
+}
+
+
